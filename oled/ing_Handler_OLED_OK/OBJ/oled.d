@@ -4,7 +4,7 @@
 ..\obj\oled.o: ..\USER\stm32f1xx.h
 ..\obj\oled.o: ..\USER\stm32f103xe.h
 ..\obj\oled.o: ..\CORE\core_cm3.h
-..\obj\oled.o: D:\Tool_of_life\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\oled.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\oled.o: ..\CORE\core_cmInstr.h
 ..\obj\oled.o: ..\CORE\cmsis_armcc.h
 ..\obj\oled.o: ..\CORE\core_cmFunc.h
@@ -15,7 +15,7 @@
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h
 ..\obj\oled.o: ..\USER\stm32f1xx.h
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\obj\oled.o: D:\Tool_of_life\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\oled.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h
@@ -58,7 +58,7 @@
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_usb.h
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd_ex.h
 ..\obj\oled.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h
-..\obj\oled.o: D:\Tool_of_life\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\oled.o: D:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\oled.o: ..\SYSTEM\delay\delay.h
 ..\obj\oled.o: ..\HARDWARE\OLED\oledfont.h
 ..\obj\oled.o: ..\HARDWARE\IIC\myiic.h

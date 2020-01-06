@@ -90,9 +90,39 @@ void OLED_DrawPoint(u8 x,u8 y,u8 t)
 	pos=7-y/8;
 	bx=y%8;
 	temp=1<<(7-bx);
-	if(t)OLED_GRAM[x][pos]|=temp;
-	else OLED_GRAM[x][pos]&=~temp;	    
+	if(t)OLED_GRAM[127-x][pos]|=temp;
+	else OLED_GRAM[127-x][pos]&=~temp;	    
 }
+
+//画点 
+//x:0~127
+//y:0~63
+void OLED_DrawPoint_o(u8 x,u8 y, u8 t)
+{
+	u8 i,m,n;
+	if (x > 127 || y > 63) return;
+	i=y/8;
+	m=y%8;
+	n=1<<m;
+	if (t == 1)OLED_GRAM[x][i]|=n;
+	else OLED_GRAM[x][i]&=n;
+}
+
+
+//清除一个点
+//x:0~127
+//y:0~63
+void OLED_ClearPoint(u8 x,u8 y)
+{
+	u8 i,m,n;
+	i=y/8;
+	m=y%8;
+	n=1<<m;
+	OLED_GRAM[x][i]=~OLED_GRAM[x][i];
+	OLED_GRAM[x][i]|=n;
+	OLED_GRAM[x][i]=~OLED_GRAM[x][i];
+}
+
 //x1,y1,x2,y2 填充区域的对角坐标
 //确保x1<=x2;y1<=y2 0<=x1<=127 0<=y1<=63	 	 
 //dot:0,清空;1,填充	  
@@ -101,7 +131,7 @@ void OLED_Fill(u8 x1,u8 y1,u8 x2,u8 y2,u8 dot)
 	u8 x,y;  
 	for(x=x1;x<=x2;x++)
 	{
-		for(y=y1;y<=y2;y++)OLED_DrawPoint(x,y,dot);
+		for(y=y1;y<=y2;y++)OLED_DrawPoint(x,y, dot);
 	}													    
 	OLED_Refresh_Gram();//更新显示
 }
@@ -121,23 +151,23 @@ void OLED_ShowChar(u8 x,u8 y,u8 chr,u8 size,u8 mode)
 	chr=chr-' ';//得到偏移后的值		 
     for(t=0;t<csize;t++)
     {   
-		if(size==12)temp=asc2_1206[chr][t]; 	 	//调用1206字体
-		else if(size==16)temp=asc2_1608[chr][t];	//调用1608字体
-		else if(size==24)temp=asc2_2412[chr][t];	//调用2412字体
-		else return;								//没有的字库
-        for(t1=0;t1<8;t1++)
-		{
-			if(temp&0x80)OLED_DrawPoint(x,y,mode);
-			else OLED_DrawPoint(x,y,!mode);
-			temp<<=1;
-			y++;
-			if((y-y0)==size)
+			if(size==12)temp=asc2_1206[chr][t]; 	 	//调用1206字体
+			else if(size==16)temp=asc2_1608[chr][t];	//调用1608字体
+			else if(size==24)temp=asc2_2412[chr][t];	//调用2412字体
+			else return;								//没有的字库
+			for(t1=0;t1<8;t1++)
 			{
-				y=y0;
-				x++;
-				break;
-			}
-		}  	 
+				if(temp&0x80)OLED_DrawPoint(x,y,mode);
+				else OLED_DrawPoint(x,y,!mode);
+				temp<<=1;
+				y++;
+				if((y-y0)==size)
+				{
+					y=y0;
+					x++;
+					break;
+				}
+			}  	 
     }          
 }
 		  
@@ -218,10 +248,40 @@ void picture_1(void)
       WriteCmd(0x10);
       for(x=0;x<128;x++)
         {
-          WriteDat(show1[i++]);
+          WriteDat(testStr[i++]);
         }
     }
 }
+
+void OLED_ShowChinese(u8 x,u8 y,u8 num,u8 size1)
+{
+	u8 i,m,n=0,temp,chr1;
+	u8 x0=x,y0=y;
+	u8 size3=size1/8;
+	while(size3--)
+	{
+		chr1=num*size1/8+n;
+		n++;
+			for(i=0;i<size1;i++)
+			{
+				if(size1==16)
+						{temp=name[chr1][i];}//调用16*16字体
+							
+						for(m=0;m<8;m++)
+							{
+								if(temp&0x01)OLED_DrawPoint(x,y,1);
+								else OLED_ClearPoint(x,y);
+								temp>>=1;
+								y++;
+							}
+							x++;
+							if((x-x0)==size1)
+							{x=x0;y0=y0+8;}
+							y=y0;
+			 }
+	}
+}
+
 
 void picture_2(void)
 {

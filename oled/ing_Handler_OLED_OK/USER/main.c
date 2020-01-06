@@ -18,14 +18,23 @@ int main(void)
 	IIC_Init();
 	OLED_Init();						//?????OLED      
 	
-	OLED_ShowString(0,0,"SH YI JIAOSH YI JIAO",24);  
-//	OLED_ShowString(0,24, "0.96' OLED TEST",16);  
+	
+//	OLED_ShowString(0,0, "120",24);  
+	OLED_ShowString(0,0, "0.96' OLED TEST",16);  
+//	OLED_DrawPoint(127, 0, 1);
+//	OLED_DrawPoint(126, 0, 1);
+	for (t=0; t<128;t++)
+		OLED_DrawPoint(t, 0, 1);
+	
+//	OLED_ShowChar(0,0,'B',24,1);
 // 	OLED_ShowString(0,40,"DATE 2018/5/04",12);  
 // 	OLED_ShowString(0,52,"ASCII:",12);  
 // 	OLED_ShowString(64,52,"CODE:",12);  
 //	OLED_Fill(10,0,30,30,1);
 	OLED_Refresh_Gram();		//?????????OLED 
 	 //picture_1();
+	//picture_1();
+
 	//OLED_ShowString(10,10,"i love you", 12);
  
 	

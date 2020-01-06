@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Sat Dec 28 10:43:56 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu Jan 02 15:52:11 2020
 <BR><P>
 <H3>Maximum Stack Usage =        380 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -527,8 +527,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
 <LI>Call Chain = __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
+<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
@@ -911,10 +911,11 @@ Global Symbols
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Init
 </UL>
 
-<P><STRONG><a name="[a6]"></a>OLED_DrawPoint</STRONG> (Thumb, 100 bytes, Stack size 20 bytes, oled.o(i.OLED_DrawPoint))
+<P><STRONG><a name="[a6]"></a>OLED_DrawPoint</STRONG> (Thumb, 120 bytes, Stack size 20 bytes, oled.o(i.OLED_DrawPoint))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = OLED_DrawPoint
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowChar
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowChar
 </UL>
 
 <P><STRONG><a name="[a2]"></a>OLED_Init</STRONG> (Thumb, 164 bytes, Stack size 8 bytes, oled.o(i.OLED_Init))
@@ -1073,7 +1074,7 @@ Global Symbols
 <P><STRONG><a name="[53]"></a>fputc</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, usart.o(i.fputc))
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_file.o(.text)
 </UL>
-<P><STRONG><a name="[67]"></a>main</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[67]"></a>main</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = main &rArr; Stm32_Clock_Init &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
@@ -1082,6 +1083,7 @@ Global Symbols
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowString
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Refresh_Gram
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Init
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_DrawPoint
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IIC_Init
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init

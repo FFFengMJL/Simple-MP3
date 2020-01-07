@@ -270,7 +270,7 @@ void OLED_ShowChinese(u8 x,u8 y,u8 num,u8 size1)
 						for(m=0;m<8;m++)
 							{
 								if(temp&0x01)OLED_DrawPoint(x,y,1);
-								else OLED_ClearPoint(x,y);
+								else OLED_DrawPoint(x,y,0);
 								temp>>=1;
 								y++;
 							}

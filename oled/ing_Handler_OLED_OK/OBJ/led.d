@@ -4,7 +4,7 @@
 ..\obj\led.o: ..\USER\stm32f1xx.h
 ..\obj\led.o: ..\USER\stm32f103xe.h
 ..\obj\led.o: ..\CORE\core_cm3.h
-..\obj\led.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\led.o: ..\CORE\core_cmInstr.h
 ..\obj\led.o: ..\CORE\cmsis_armcc.h
 ..\obj\led.o: ..\CORE\core_cmFunc.h
@@ -15,7 +15,7 @@
 ..\obj\led.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h
 ..\obj\led.o: ..\USER\stm32f1xx.h
 ..\obj\led.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\obj\led.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\led.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h
 ..\obj\led.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h
 ..\obj\led.o: ..\HALLIB\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h

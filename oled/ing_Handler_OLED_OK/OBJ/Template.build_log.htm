@@ -3,42 +3,52 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.21.1.0
-Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: mi m781131, HP Inc., LIC=----
+IDE-Version: ¦ÌVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Robin Wong, SYSU, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.21a
-Toolchain Path:  D:\keil\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 3 (build 300)
-Assembler:       Armasm.exe V5.06 update 3 (build 300)
-Linker/Locator:  ArmLink.exe V5.06 update 3 (build 300)
-Library Manager: ArmAr.exe V5.06 update 3 (build 300)
-Hex Converter:   FromElf.exe V5.06 update 3 (build 300)
-CPU DLL:         SARMCM3.DLL V5.21a
-Dialog DLL:      DARMSTM.DLL V1.66.0.1
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
-Dialog DLL:      TARMSTM.DLL V1.65.0.0
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.6.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-D:\Simple-MP3\oled\ing_Handler_OLED_OK\USER\IIC.uvprojx
-Project File Date:  01/02/2020
+F:\Projects\Simple-MP3\oled\ing_Handler_OLED_OK\USER\IIC.uvprojx
+Project File Date:  01/07/2020
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 3 (build 300)', folder: 'D:\keil\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'IIC'
-compiling oled.c...
+compiling main.c...
+main.c(54): warning:  #177-D: variable "t"  was declared but never referenced
+  	u8 t=0; 
+main.c: 1 warning, 0 errors
 linking...
-Program Size: Code=14408 RO-data=7888 RW-data=324 ZI-data=2980  
+Program Size: Code=14552 RO-data=656 RW-data=868 ZI-data=2980  
 FromELF: creating hex file...
-"..\OBJ\Template.axf" - 0 Error(s), 0 Warning(s).
+"..\OBJ\Template.axf" - 0 Error(s), 1 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  D:\Simple-MP3\oled\ing_Handler_OLED_OK\USER\RTE
-  D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+  .\RTE\_IIC
+  C:\Users\chaow\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
